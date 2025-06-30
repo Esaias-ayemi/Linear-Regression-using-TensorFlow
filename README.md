@@ -1,10 +1,10 @@
-# 🧠 Linear Regression using TensorFlow: A Beginner-Friendly Walkthrough
+# Linear Regression using TensorFlow: A Beginner-Friendly Walkthrough
 
 This project demonstrates how to build a simple linear regression model using TensorFlow in a way that's accessible to complete beginners. It walks through synthetic data creation, model building, training, and visualization.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 TensorFlow-Linear-Model/
@@ -16,7 +16,7 @@ TensorFlow-Linear-Model/
 
 ---
 
-## 🧰 Requirements
+## Requirements
 
 - Python 3.10
 - TensorFlow 2.x
@@ -32,9 +32,9 @@ pip install numpy matplotlib tensorflow
 
 ---
 
-## 📖 Code Walkthrough
+## Code Walkthrough
 
-### 🔹 1. Importing Libraries
+### 1. Importing Libraries
 
 ```python
 import numpy as np
@@ -47,7 +47,7 @@ tf.disable_eager_execution()
 
 ---
 
-### 🔹 2. Generating Synthetic Data
+### 2. Generating Synthetic Data
 
 ```python
 observations = 1000
@@ -68,7 +68,7 @@ np.savez('TF_Intro', inputs=generated_inputs, targets=generated_targets)
 
 ---
 
-### 🔹 3. Setting Input and Output Dimensions
+### 3. Setting Input and Output Dimensions
 
 ```python
 input_size = 2
@@ -84,7 +84,7 @@ targets = tf.placeholder(tf.float32, [None, output_size])
 
 ---
 
-### 🔹 4. Initializing Weights and Biases
+### 4. Initializing Weights and Biases
 
 ```python
 weights = tf.Variable(tf.random_uniform([input_size, output_size], minval=-0.1, maxval=0.1))
@@ -95,7 +95,7 @@ biases = tf.Variable(tf.random_uniform([output_size], minval=-0.1, maxval=0.1))
 
 ---
 
-### 🔹 5. Model Output Equation
+### 5. Model Output Equation
 
 ```python
 outputs = tf.matmul(inputs, weights) + biases
@@ -106,7 +106,7 @@ outputs = tf.matmul(inputs, weights) + biases
 
 ---
 
-### 🔹 6. Defining the Loss Function
+### 6. Defining the Loss Function
 
 ```python
 loss = tf.reduce_mean(tf.square(outputs - targets))
@@ -116,7 +116,7 @@ loss = tf.reduce_mean(tf.square(outputs - targets))
 
 ---
 
-### 🔹 7. Optimizer Setup
+### 7. Optimizer Setup
 
 ```python
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
@@ -127,7 +127,7 @@ training_op = optimizer.minimize(loss)
 
 ---
 
-### 🔹 8. Training the Model
+### 8. Training the Model
 
 ```python
 session = tf.Session()
@@ -142,7 +142,7 @@ for epoch in range(100):
 
 ---
 
-### 🔹 9. Visualizing the Predictions
+### 9. Visualizing the Predictions
 
 ```python
 predictions = session.run(outputs, feed_dict={inputs: train_inputs})
@@ -157,7 +157,7 @@ plt.show()
 
 ---
 
-## 📈 What You'll Learn
+## What You'll Learn
 
 - How to simulate real-world data for machine learning
 - TensorFlow's computation graph concept using placeholders
@@ -166,7 +166,7 @@ plt.show()
 
 ---
 
-## 📃 License
+## License
 
 This project is licensed under the MIT License. Feel free to use or modify it for your learning or personal projects.
 
