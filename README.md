@@ -51,19 +51,19 @@ tf.disable_eager_execution()
 
 ```python
 observations = 1000
-xs = np.random.uniform(-10, 10, (observations, 1))
-zs = np.random.uniform(-10, 10, (observations, 1))
+x = np.random.uniform(-10, 10, (observations, 1))
+z = np.random.uniform(-10, 10, (observations, 1))
 
-generated_inputs = np.column_stack((xs, zs))
+generated_inputs = np.column_stack((x, z))
 
 noise = np.random.uniform(-1, 1, (observations, 1))
-generated_targets = 2 * xs - 3 * zs + 5 + noise
+generated_targets = 4 * x - 2 * z + 7 + noise
 
 np.savez('TF_Intro', inputs=generated_inputs, targets=generated_targets)
 ```
 
 > We generate 1000 samples using the formula:  
-> `target = 2*x - 3*z + 5 + noise`,  
+> `target = 4 * x - 2 * z + 7 + noise`,  
 > simulating real-world data with a little randomness.
 
 ---
@@ -172,6 +172,4 @@ This project is licensed under the MIT License. Feel free to use or modify it fo
 
 ---
 
-## 🤝 Acknowledgements
 
-Thanks to the TensorFlow community for extensive documentation and examples that helped shape this project.
